@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>无JSX的方式</h1>
+    </div>
+    <script>
+        let user={name:'john'}
+        function render(){
+            let h1=React.createElement('h1',{},user.name)
+            let button=React.createElement('button',{onClick:()=>{
+                user.name="tom"
+                _handle()
+            }},"change name")
+            let div=React.createElement('div',{},[h1,button])
+            ReactDOM.render(div,document.querySelector('#app'))
+        }
+        render()
+       
+        
+    </script>
+</body>
+</html>

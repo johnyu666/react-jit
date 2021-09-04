@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/babel.js"></script>
+</head>
+<body>
+    <h1>使用了JSX</h1>
+    <div id="app">
+        
+    </div>
+    <script type="text/babel">
+        let user={name:'john'}
+        function render(){
+            let div=<div><h1>{user.name}</h1><button onClick={()=>{
+                user.name="JohnSon"
+                render()
+            }}>change me</button></div>
+            ReactDOM.render(div,document.querySelector('#app'))
+        }
+        render()
+        
+    </script>
+</body>
+</html>

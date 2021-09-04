@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/react.js"></script>
+    <script src="js/react-dom.js"></script>
+    <script src="js/babel.js"></script>
+</head>
+<body>
+    <h1>使用了function语法</h1>
+    <div id="app">
+        
+    </div>
+    <script type="text/babel">
+        function App(){ 
+            let [user,setUser]=React.useState({name:'john'})//代码只能位于函数体中
+            function _change(){
+                setUser({name:'Johnson'})
+            }
+            return <div><h1>{user.name}</h1>
+                <button onClick={_change}>change me</button></div>
+        }
+        
+        ReactDOM.render(<App/>,document.querySelector('#app'))
+    </script>
+</body>
+</html>
